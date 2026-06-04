@@ -1,2 +1,226 @@
 # She-can-foundation-webpage
 this is a web page created by me for "she can foundation" summer internship program test.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>She Can Foundation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    line-height:1.6;
+    background:#f8f9fc;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#ff5f9e,#ff8fb8);
+    color:rgb(247, 233, 103);
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+    animation:fadeIn 1s ease;
+}
+
+header p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:60px 0;
+}
+
+.about{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    color:#ff5f9e;
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.about-text p{
+    font-size:1.05rem;
+    margin-bottom:20px;
+}
+
+.about-image{
+    flex:1;
+    text-align:center;
+}
+
+.about-image img{
+    width:100%;
+    max-width:500px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(16, 16, 16, 0.15);
+}
+
+
+.btn{
+    display:inline-block;
+    background:#ff5f9e;
+    color:rgb(235, 252, 136);
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:30px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#e84c8d;
+}
+
+
+.impact{
+    text-align:center;
+    background:rgb(176, 207, 248);
+    padding:60px 20px;
+}
+
+.impact h2{
+    color:#ff5f9e;
+    margin-bottom:15px;
+}
+
+.counter{
+    font-size:3rem;
+    font-weight:bold;
+    color:#333;
+}
+
+footer{
+    background:#222;
+    color:rgb(160, 201, 228);
+    text-align:center;
+    padding:20px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@media(max-width:768px){
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+    .about{
+        flex-direction:column;
+    }
+
+    .about-text,
+    .about-image{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>She Can Foundation</h1>
+    <p>
+        Empowering women and girls through education, opportunities,
+        and community support to build a stronger and more inclusive future.
+    </p>
+</header>
+
+<section class="container">
+    <div class="about">
+
+        <div class="about-text">
+            <h2>About Us</h2>
+
+            <p>
+                She Can Foundation is a non-profit organization dedicated to empowering
+                 women and creating a more equitable society. We provide support, resources,
+                and training to women in communities across the globe, and we raise awareness 
+                of women's issues through advocacy campaigns and initiatives. We believe that
+                every woman deserves the opportunity to thrive and succeed, regardless of her
+                background or circumstances, and we work tirelessly to create a world where that
+                is possible. We are committed to breaking down barriers and creating lasting change,
+                and we invite you to join us in our mission to empower women and create a better future for all.
+            </p>
+
+            <a href="#" class="btn" onclick="showMessage()">
+                Support Our Mission
+            </a>
+        </div>
+
+        <div class="about-image">
+            <img src="she can foundation1.jpeg" alt="she can foundation2.jpeg">
+        </div>
+
+    </div>
+</section>
+
+<section class="impact">
+    <h2>Lives Impacted</h2>
+    <div class="counter" id="counter">0</div>
+    <p>Women and girls supported through our initiatives.</p>
+</section>
+
+<footer>
+    <p>© 2026 She Can Foundation | Empowering Change Together</p>
+</footer>
+
+<script>
+function showMessage(){
+    alert("Thank you for supporting She Can Foundation!");
+}
+
+let count = 0;
+const target = 5000;
+
+const counter = document.getElementById("counter");
+
+const interval = setInterval(() => {
+
+    count += 50;
+    counter.innerText = count + "+";
+
+    if(count >= target){
+        clearInterval(interval);
+    }
+
+}, 20);
+</script>
+
+</body>
+</html>
